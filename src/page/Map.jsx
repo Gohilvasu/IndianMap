@@ -51,7 +51,7 @@ const Map = () => {
                   <Checkbox
                     checked={filterCategories.includes(item.value)}
                     onChange={handleFilterChange}
-                    value={item.value}
+                    value={item.value}  
                   />
                 }
                 label={item.label}
