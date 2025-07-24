@@ -5,21 +5,15 @@ import './App.css'
 import Map from './page/Map';
 import Form from './page/Form';
 import {BrowserRouter as Router , Routes , Route} from 'react-router-dom';
-
+import Card from './page/Card'
 
 function App() {
   
 
   return (
     <>
-    <Router>
-      <Routes>
-     
-      <Route path="/" element={<Form/>}/>
-      <Route path="/map" element={<Map/>}/>
-      </Routes>
-      
-      </Router>
+    
+      <Card/>
 
      
     </>

@@ -145,7 +145,7 @@ const Map = () => {
                       navigate(el.path);
                     }}
                   />
-                  {el.centeredPoint && (
+                  {el.centeredPoint && ( 
                     <text
                       x={el.centeredPoint.split(",")[0]}
                       y={el.centeredPoint.split(",")[1]}
