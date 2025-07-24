@@ -25,8 +25,20 @@ const Card = () => {
     setActiveIndex(index);
   };
 
+  const handlePrev = () => {
+    setActiveIndex((prev) => getWrappedIndex(prev - 1));
+  }
+
+  const handleNext = () => {
+    setActiveIndex((prev) => getWrappedIndex(prev + 1));
+
+  }
+
   return (
+    <div className="carousel-wrapper">
+       <button className="nav-button left" onClick={handlePrev}>&#10094;</button>
     <div className="carousel-container">
+      
       {Array.from({ length: VISIBLE_CARDS }).map((_, i) => {
         const offset = i - half;
         const index = getWrappedIndex(activeIndex + offset); 
@@ -37,17 +49,19 @@ const Card = () => {
             key={cards[index].id}
             className={`carousel-card ${offset === 0 ? 'active' : ''}`}
             style={{
-              transform: `translateX(${offset * 150}px) scale(${1 - absOffset * 0.1}) rotateY(${offset * -20}deg)`,
+              transform: `translateX(${offset *  150}px) scale(${1 - absOffset * 0.1}) rotateY(${offset * -20}deg)`,
               zIndex: 100 - absOffset,
               opacity: offset === 0 ? 1 : 0.6,
             }}
             onClick={() => handleCardClick(index)}
           >
-            <img src={"https://source.unsplash.com/random/300x200"} alt={cards[index].content} />
+            <img src={`https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`} alt={cards[index].content} />
             <p>{cards[index].content}</p>
           </div>
         );
       })}
+    </div>
+      <button className="nav-button right" onClick={handleNext}>&#10095;</button>
     </div>
   );
 };

@@ -35,3 +35,8 @@
 .carousel-card.active {
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
+.carousel-wrapper{
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
